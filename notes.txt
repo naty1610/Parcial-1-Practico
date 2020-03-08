@@ -1,0 +1,5 @@
+Para instalar un apk en el emulador:
+	abrir el emulador
+	por la consola de comandos ir a la ruta platform-tools del directorio del SDK, alli debe estar el apk
+	ejecutar el comando:
+		adb install [.apk path]
