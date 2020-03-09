@@ -3,3 +3,27 @@ Para instalar un apk en el emulador:
 	por la consola de comandos ir a la ruta platform-tools del directorio del SDK, alli debe estar el apk
 	ejecutar el comando:
 		adb install [.apk path]
+		adb install RedReader-modificada.apk
+
+Para mandarle monkeys a la app ejecutar el siguiente comando dentro de la carpeta platform-tools:
+	adb shell monkey -p org.quantumbadger.redreader --pct-syskeys 0 --pct-nav 0 --pct-motion 0 --pct-trackball 0 --pct-appswitch 0 --pct-anyevent 0 -v 10000
+	adb shell monkey -p org.quantumbadger.redreader -v 1000
+Para mandarle eventos siguiendo una semilla:
+	adb shell monkey -s 1583908229123 -p org.quantumbadger.redreader --pct-syskeys 0 --pct-nav 0 --pct-motion 0 --pct-trackball 0 --pct-appswitch 0 --pct-anyevent 0 -v 10000
+	
+Semillas que generan errores:
+	1583849694201
+	1583829943306
+	
+Para "pinnear" la app seguir estos pasos:
+	1. activate it with settings>security>screen pinning
+	2. press the app switcher/multitasking button next to your home button
+	3. on the bottom corner of each app in the recents apps list will be a pin icon
+	Ahi si mandar el comando: 
+	adb shell monkey -p org.quantumbadger.redreader --pct-syskeys 0 -v 10000
+		para "unpinnearla" ejecutar el comando:
+		adb shell am task lock stop
+		
+Para mandar todos los eventos con la app "pinneada" y una semilla
+	adb shell monkey -p org.quantumbadger.redreader --pct-syskeys 0 -v -s 1583829943306 10000
+	
