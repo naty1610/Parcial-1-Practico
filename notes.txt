@@ -23,8 +23,8 @@ Para "pinnear" la app seguir estos pasos:
 	3. on the bottom corner of each app in the recents apps list will be a pin icon
 	Ahi si mandar el comando: 
 	adb shell monkey -p org.quantumbadger.redreader --pct-syskeys 0 -v 10000
-		para "unpinnearla" ejecutar el comando:
-		adb shell am task lock stop
+Para "unpinnearla" ejecutar el comando:
+	adb shell am task lock stop
 		
 Para mandar todos los eventos con la app "pinneada" y una semilla
 	adb shell monkey -p org.quantumbadger.redreader --pct-syskeys 0 -v -s 1583799548096 --throttle 100 10000
