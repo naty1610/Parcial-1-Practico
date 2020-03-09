@@ -13,9 +13,8 @@ Para mandarle eventos siguiendo una semilla:
 	adb shell monkey -s 1583908229123 -p org.quantumbadger.redreader --pct-syskeys 0 --pct-nav 0 --pct-motion 0 --pct-trackball 0 --pct-appswitch 0 --pct-anyevent 0 -v 10000
 	
 Semillas que generan errores:
-	1583849694201
-	1583829943306
-	1583799548096
+	1583818069834
+	1583758867657
 	
 Para "pinnear" la app seguir estos pasos:
 	1. activate it with settings>security>screen pinning
@@ -27,5 +26,5 @@ Para "unpinnearla" ejecutar el comando:
 	adb shell am task lock stop
 		
 Para mandar todos los eventos con la app "pinneada" y una semilla
-	adb shell monkey -p org.quantumbadger.redreader --pct-syskeys 0 -v -s 1583799548096 --throttle 100 10000
+	adb shell monkey -p org.quantumbadger.redreader --pct-syskeys 0 -v -s 1583758867657 10000
 	
