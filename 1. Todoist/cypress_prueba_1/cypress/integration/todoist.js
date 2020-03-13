@@ -120,7 +120,7 @@ describe('Todoist Log out', function () {
     cy.wait(1000)
     cy.screenshot();
     cy.get('div[class="usermenu__row"]').contains('Log out').click()
-    cy.wait(40000)
+    cy.wait(3000)
     cy.screenshot();
   })
 }) 
