@@ -120,7 +120,17 @@ describe('Todoist Log out', function () {
     cy.wait(1000)
     cy.screenshot();
     cy.get('div[class="usermenu__row"]').contains('Log out').click()
-    cy.wait(3000)
+  })
+})
+
+describe('Todoist Register', function () {
+  beforeEach(function () {
+    cy.visit('https://todoist.com/users/showRegister')
+    cy.wait(2000)
+  })
+  it('Register Fails - All fields empty', function () {
+    cy.get('button[class="submit_btn ist_button ist_button_red"]').contains('Sign up now').click()
     cy.screenshot();
+    cy.get('div[class="error_msg"]').first().contains("Full name can't be empty")
   })
 }) 
